@@ -1,5 +1,15 @@
 # Comparisons
 
+Naming convention of the different configurations:
+
+- TC: Tail calling interpreter
+- PGO: Profile-guided-optimization
+- Ex: Experimental pre-release of MSVC that supports musttail and preserve_none.  NoEx is the released version 19.43.34808
+
+
+The experimental compiler doesn't yet support TC+PGO.
+
+
 |  | NoTC-PGO-NoEx | NoTC-NoPGO-NoEx | NoTC-NoPGO-Ex | TC-NoPGO-Ex |
 | -- | -- | -- | -- | -- |
 | NoTC-PGO-NoEx |  | 1.273x ↓[📄](NoTC-NoPGO-NoEx-vs-NoTC-PGO-NoEx.md)[📈](NoTC-NoPGO-NoEx-vs-NoTC-PGO-NoEx.svg) | 1.301x ↓[📄](NoTC-NoPGO-Ex-vs-NoTC-PGO-NoEx.md)[📈](NoTC-NoPGO-Ex-vs-NoTC-PGO-NoEx.svg) | 1.008x ↑[📄](TC-NoPGO-Ex-vs-NoTC-PGO-NoEx.md)[📈](TC-NoPGO-Ex-vs-NoTC-PGO-NoEx.svg) |
