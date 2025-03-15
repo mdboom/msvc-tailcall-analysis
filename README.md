@@ -18,7 +18,7 @@ Without PGO getting involved, and all other variables being equal, the effect of
 
 Unfortunately, the effect of PGO in the normal case is 37% (c), which counts considerably against the overall wins of the tail-calling interpreter without PGO, netting only 1% (d).
 
-While we are waiting for PGO instrumentation to be supported on functions with the `musttail` annotation, we can approximate the effect of PGO on the tail calling interpreter by collecting PGO data on everything *but* the functions that make up the tail calling interpreter.  When doing that, we see a substantial improvement of 8.1% (e).  This represents a "worst case" improvement that should be possible when full PGO+tail calling is implemented.
+While we are waiting for PGO instrumentation to be supported on functions with the `musttail` annotation, we can approximate the effect of PGO on the tail calling interpreter by collecting PGO data on everything *but* the functions that make up the tail calling interpreter.  When doing that, we see a substantial improvement of 8.1% (e).  This is the geometric mean of all benchmarks -- it's worth noting that on interpreter-heavy benchmarks the improvement is 10%-44% which is extremely impressive.  This represents a "worst case" improvement that should be possible when full PGO+tail calling is implemented.
 
 This suggests to me that the work on `preserve_none` and `musttail` in MSVC has been very valuable to CPython and the additional work to make it compatible with PGO will not be in vain.  8% improvements are very hard to come by.
 
